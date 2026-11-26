@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODO CAFÉ | Cafetería</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 85px;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #fffaf3;
+            color: #38271e;
+        }
+
+        section {
+            padding: 70px 0;
+        }
+
+        .navbar {
+            background: #38271e;
+        }
+
+        .navbar-brand {
+            font-size: 25px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-link {
+            color: white !important;
+            margin-left: 12px;
+        }
+
+        .nav-link:hover {
+            color: #e7b77d !important;
+        }
+
+        .hero {
+            background: linear-gradient(#0007, #0008),
+            url("https://images.unsplash.com/photo-1445116572660-236099ec97a0?w=1600");
+            background-size: cover;
+            background-position: center;
+            color: white;
+            min-height: 550px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            font-weight: bold;
+        }
+
+        .hero p {
+            font-size: 19px;
+            max-width: 600px;
+        }
+
+        .btn-cafe {
+            background: #96613d;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+        }
+
+        .btn-cafe:hover {
+            background: #68432d;
+            color: white;
+        }
+
+        .titulo {
+            font-size: 35px;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .subtitulo {
+            color: #8b7464;
+            margin-bottom: 35px;
+        }
+
+        .producto {
+            background: white;
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 4px 15px #00000012;
+            transition: 0.3s;
+        }
+
+        .producto:hover {
+            transform: translateY(-6px);
+        }
+
+        .producto img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .producto .card-body {
+            padding: 22px;
+        }
+
+        .precio {
+            color: #96613d;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .categoria {
+            background: #f1dfca;
+            color: #68432d;
+            padding: 7px 13px;
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        .sobre {
+            background: #f1dfca;
+        }
+
+        .sobre img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .dato {
+            background: white;
+            padding: 22px;
+            border-radius: 10px;
+            text-align: center;
+            height: 100%;
+        }
+
+        .dato h3 {
+            color: #96613d;
+            font-size: 28px;
+        }
+
+        .galeria img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .promocion {
+            background: #38271e;
+            color: white;
+            border-radius: 15px;
+            padding: 45px;
+        }
+
+        .consulta {
+            background: #f1dfca;
+        }
+
+        .contacto-card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            height: 100%;
+            box-shadow: 0 3px 12px #00000010;
+        }
+
+        .contacto-card h4 {
+            color: #96613d;
+        }
+
+        .form-control, .form-select {
+            padding: 12px;
+        }
+
+        footer {
+            background: #38271e;
+            color: white;
+            padding: 45px 0 20px;
+        }
+
+        footer a {
+            color: #e7b77d;
+            text-decoration: none;
+        }
+
+        .separador {
+            border-color: #ffffff40;
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                min-height: 450px;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .titulo {
+                font-size: 29px;
+            }
+
+            .promocion {
+                padding: 25px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="#inicio">MODO CAFÉ ☕</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#productos">Menú</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#nosotros">Nosotros</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#galeria">Galería</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#promociones">Promociones</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <div class="container">
+            <span class="badge bg-success mb-3">CAFÉ Y MOMENTOS ESPECIALES</span>
+
+            <h1>Mucho más que<br>una taza de café.</h1>
+
+            <p class="mt-3">
+                Un espacio creado para disfrutar, compartir y desconectarse.
+                Descubrí nuestros sabores y viví una experiencia diferente.
+            </p>
+
+            <a href="#productos" class="btn btn-cafe btn-lg mt-3">
+                Descubrir menú
+            </a>
+
+            <a href="#nosotros" class="btn btn-outline-light btn-lg mt-3 ms-2">
+                Conocenos
+            </a>
+        </div>
+    </section>
+
+    <section id="productos">
+        <div class="container">
+
+            <div class="text-center">
+                <h2 class="titulo">Nuestro menú</h2>
+                <p class="subtitulo">Productos preparados para disfrutar cada momento.</p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="card producto">
+                        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800" alt="Café clásico">
+                        <div class="card-body">
+                            <span class="categoria">Bebidas</span>
+                            <h4 class="mt-3">Café clásico</h4>
+                            <p>Café recién preparado, con aroma y sabor especial.</p>
+                            <p class="precio">$ 3.000</p>
+                            <a href="#consultas" class="btn btn-cafe">Consultar producto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card producto">
+                        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=800" alt="Medialunas">
+                        <div class="card-body">
+                            <span class="categoria">Panadería</span>
+                            <h4 class="mt-3">Medialunas</h4>
+                            <p>Medialunas dulces, frescas y recién horneadas.</p>
+                            <p class="precio">$ 2.500</p>
+                            <a href="#consultas" class="btn btn-cafe">Consultar producto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card producto">
+                        <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800" alt="Torta">
+                        <div class="card-body">
+                            <span class="categoria">Pastelería</span>
+                            <h4 class="mt-3">Porción de torta</h4>
+                            <p>Deliciosas tortas para acompañar tu café.</p>
+                            <p class="precio">$ 4.000</p>
+                            <a href="#consultas" class="btn btn-cafe">Consultar producto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card producto">
+                        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800" alt="Cappuccino">
+                        <div class="card-body">
+                            <span class="categoria">Bebidas</span>
+                            <h4 class="mt-3">Cappuccino</h4>
+                            <p>Café con leche cremosa y espuma suave.</p>
+                            <p class="precio">$ 3.800</p>
+                            <a href="#consultas" class="btn btn-cafe">Consultar producto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card producto">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800" alt="Pan artesanal">
+                        <div class="card-body">
+                            <span class="categoria">Panadería</span>
+                            <h4 class="mt-3">Pan artesanal</h4>
+                            <p>Panificados frescos elaborados diariamente.</p>
+                            <p class="precio">$ 3.500</p>
+                            <a href="#consultas" class="btn btn-cafe">Consultar producto</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="card producto">
+                        <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=800" alt="Postre">
+                        <div class="card-body">
+                            <span class="categoria">Postres</span>
+                            <h4 class="mt-3">Postre especial</h4>
+                            <p>Una opción dulce para cerrar tu desayuno.</p>
+                            <p class="precio">$ 4.500</p>
+                            <a href="#consultas" class="btn btn-cafe">Consultar producto</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="sobre" id="nosotros">
+        <div class="container">
+
+            <div class="row align-items-center g-5">
+
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=1000" alt="Interior de cafetería">
+                </div>
+
+                <div class="col-md-6">
+                    <span class="categoria">NUESTRA HISTORIA</span>
+
+                    <h2 class="titulo mt-3">Un lugar pensado para vos.</h2>
+
+                    <p>
+                        MODO CAFÉ nace con la idea de crear un espacio
+                        donde cada persona pueda disfrutar de un buen café
+                        y compartir momentos especiales.
+                    </p>
+
+                    <p>
+                        Trabajamos con productos seleccionados,
+                        atención amable y un ambiente cómodo para
+                        acompañar tus desayunos y meriendas.
+                    </p>
+
+                    <a href="#contacto" class="btn btn-cafe mt-2">
+                        Conocé nuestro local
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="row g-3 mt-4">
+                <div class="col-md-4">
+                    <div class="dato">
+                        <h3>100%</h3>
+                        <p>Atención dedicada</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="dato">
+                        <h3>Diario</h3>
+                        <p>Productos frescos</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="dato">
+                        <h3>Calidad</h3>
+                        <p>En cada preparación</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="galeria">
+        <div class="container">
+
+            <div class="text-center">
+                <h2 class="titulo">Nuestra galería</h2>
+                <p class="subtitulo">Un vistazo a lo que tenemos para ofrecerte.</p>
+            </div>
+
+            <div class="row g-4 galeria">
+
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800" alt="Café servido">
+                </div>
+
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=800" alt="Interior del café">
+                </div>
+
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1493857671505-3d1f1f1c1c1c?w=800" alt="Cafetería">
+                </div>
+
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=800" alt="Mesa de cafetería">
+                </div>
+
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=800" alt="Taza de café">
+                </div>
+
+                <div class="col-md-4">
+                    <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=800" alt="Desayuno">
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="promociones">
+        <div class="container">
+
+            <div class="promocion text-center">
+                <span class="badge bg-warning text-dark mb-3">PROMOCIÓN ESPECIAL</span>
+
+                <h2 class="titulo">Desayuno para compartir</h2>
+
+                <p class="fs-5">
+                    Dos cafés clásicos y dos medialunas para disfrutar juntos.
+                </p>
+
+                <h2 class="my-4">$ 9.000</h2>
+
+                <a href="#consultas" class="btn btn-light btn-lg">
+                    Consultar promoción
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="consulta" id="consultas">
+        <div class="container">
+
+            <div class="text-center">
+                <h2 class="titulo">¿Tenés alguna consulta?</h2>
+                <p class="subtitulo">Estamos para ayudarte.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+
+                    <div class="contacto-card">
+
+                        <form action="mailto:modocafe@gmail.com" method="post" enctype="text/plain">
+
+                            <div class="mb-3">
+                                <label class="form-label">Nombre completo</label>
+                                <input type="text" name="Nombre" class="form-control" placeholder="Escribí tu nombre" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Correo electrónico</label>
+                                <input type="email" name="Correo" class="form-control" placeholder="ejemplo@gmail.com" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">¿Qué producto te interesa?</label>
+                                <select name="Producto" class="form-select">
+                                    <option>Café clásico</option>
+                                    <option>Medialunas</option>
+                                    <option>Porción de torta</option>
+                                    <option>Cappuccino</option>
+                                    <option>Pan artesanal</option>
+                                    <option>Postre especial</option>
+                                    <option>Promoción especial</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label">Mensaje</label>
+                                <textarea name="Mensaje" class="form-control" rows="4" placeholder="Escribí tu consulta..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-cafe w-100">
+                                Enviar consulta
+                            </button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contacto">
+        <div class="container">
+
+            <div class="text-center">
+                <h2 class="titulo">Encontranos</h2>
+                <p class="subtitulo">Estamos esperando tu visita.</p>
+            </div>
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <div class="contacto-card text-center">
+                        <h4>📍 Ubicación</h4>
+                        <p>San Salvador de Jujuy</p>
+                        <p>Argentina</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contacto-card text-center">
+                        <h4>✉️ Correo</h4>
+                        <p>modocafe@gmail.com</p>
+                        <a href="mailto:modocafe@gmail.com" class="btn btn-cafe">Escribir correo</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="contacto-card text-center">
+                        <h4>🕒 Horarios</h4>
+                        <p>Lunes a sábados</p>
+                        <p>08:00 a 20:00 hs.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+                    <h4>MODO CAFÉ ☕</h4>
+                    <p>Mucho más que una taza de café.</p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Enlaces rápidos</h5>
+                    <p><a href="#inicio">Inicio</a></p>
+                    <p><a href="#productos">Menú</a></p>
+                    <p><a href="#nosotros">Nosotros</a></p>
+                    <p><a href="#contacto">Contacto</a></p>
+                </div>
+
+                <div class="col-md-4">
+                    <h5>Contacto</h5>
+                    <p>modocafe@gmail.com</p>
+                    <p>San Salvador de Jujuy</p>
+                    <p>Lunes a sábados de 8 a 20 hs.</p>
+                </div>
+
+            </div>
+
+            <hr class="separador">
+
+            <p class="text-center mb-0">
+                © 2026 MODO CAFÉ - Todos los derechos reservados.
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
